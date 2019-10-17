@@ -9,6 +9,6 @@
         $rub3addr ='logOK.php';
 ?>
 
-<a href="<?php echo $rub1addr; ?>"><?php echo $rub1; ?> </a>
-<a href="<?php echo $rub2addr; ?>"><?php echo $rub2; ?> </a>
-<a href="<?php echo $rub3addr; ?>"><?php echo $rub3; ?> </a>
+<li><a href="<?php echo $rub1addr; ?>"><?php echo $rub1; ?> </a></li>
+<li><a href="<?php echo $rub2addr; ?>"><?php echo $rub2; ?> </a></li>
+<li><a href="<?php echo $rub3addr; ?>"><?php echo $rub3; ?> </a></li>
