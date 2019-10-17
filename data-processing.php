@@ -18,7 +18,14 @@
 
     if($action=='mailer'){
         mail('EntrerMailDuRecepteur','TD2 Identifiants',$message);
-
+    }elseif ($action=='rec'){
+        $file='data.txt';
+        if(!($file=fopen($file,'a+'))){
+            echo'Erreurd\'ouverture';
+            exit();
+        }
+        fputs($file,'id: '.$id.', email:'.$mail.PHP_EOL);
+        fclose($file);
     }else{
         echo'<br/><strong>Bouton non géré!</strong><br/>';
     }
