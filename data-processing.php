@@ -23,7 +23,7 @@
         }
         fputs($file, 'id: ' . $id . ', email:' . $mail . PHP_EOL);
         fclose($file);
-}   elseif($action=='mailer'){
+    }elseif($action=='mailer'){
         mail('EntrerMailDuRecepteur','TD2 Identifiants',$message);
     }else{
         echo'<br/><strong>Bouton non géré!</strong><br/>';
