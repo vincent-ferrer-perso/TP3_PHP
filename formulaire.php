@@ -41,5 +41,5 @@
 
                     
                 <label for=soumettre><input id="soumettre" type="submit" name="action" value="mailer"></label>
-                <label for=soumettre><input id="soumettre" type="submit" name="action" value="rec">Fichier Data.txt</label>
+                <label for=recInfo><input id="recInfo" type="submit" name="action" value="rec"></label>
             </form>';
