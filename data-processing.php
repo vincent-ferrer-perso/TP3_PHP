@@ -15,17 +15,16 @@
                 'Mot de passe: '.$mdp."\n".
                 'Pays: '.$pays."\n";
 
-
-    if($action=='mailer'){
-        mail('EntrerMailDuRecepteur','TD2 Identifiants',$message);
-    }elseif ($action=='rec'){
-        $file='data.txt';
-        if(!($file=fopen($file,'a+'))){
-            echo'Erreurd\'ouverture';
+    if ($action=='rec') {
+        $file = 'data.txt';
+        if (!($file = fopen($file, 'a+'))) {
+            echo 'Erreurd\'ouverture';
             exit();
         }
-        fputs($file,'id: '.$id.', email:'.$mail.PHP_EOL);
+        fputs($file, 'id: ' . $id . ', email:' . $mail . PHP_EOL);
         fclose($file);
+}   elseif($action=='mailer'){
+        mail('EntrerMailDuRecepteur','TD2 Identifiants',$message);
     }else{
         echo'<br/><strong>Bouton non géré!</strong><br/>';
     }
