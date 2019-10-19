@@ -27,14 +27,14 @@
         $usernameBD = $dbRow['NomUtilisateur'];
     }
 
-if ($usernameBD == $Login && $mdpBD == $mdp) {
-    $query2 = 'UPDATE user
-                  SET NbConnexion = NbConnexion + 1
-                  WHERE NomUtilisateur = \''.$Login.'\'';
+    if ($usernameBD == $Login && $mdpBD == $mdp) {
+        $query2 = 'UPDATE user
+                   SET NbConnexion = NbConnexion + 1
+                   WHERE NomUtilisateur = \''.$Login.'\'';
 
     $dbResult=mysqli_query($dbLink, $query2);
 
-    if (!($dbResult = mysqli_query($dbLink, $query))) {
+    if (!($dbResult = mysqli_query($dbLink, $query2))) {
         echo 'Erreur dans requête<br/>';               //Affiche le type d'erreur.
         echo 'Erreur: ' . mysqli_error($dbLink) . '<br/>'; //Affiche la requête envoyée.
         echo 'Requête: ' . $query . '<br/>';
