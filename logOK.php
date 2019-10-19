@@ -17,7 +17,7 @@
 
         $query = 'UPDATE user
                   SET NbConnexion = NbConnexion + 1
-                  WHERE NomUtilisateur = ' .$Login. '';
+                  WHERE NomUtilisateur = \''.$Login.'\'';
 
         if (!($dbResult = mysqli_query($dbLink, $query))) {
             echo 'Login '.$Login.'<br/>';               //Affiche la variale login (NomUtilisateur dans la base de donnée)
