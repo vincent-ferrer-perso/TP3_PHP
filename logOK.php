@@ -20,6 +20,7 @@
                   WHERE NomUtilisateur = ' .$Login. '';
 
         if (!($dbResult = mysqli_query($dbLink, $query))) {
+            echo 'Login '.$Login.'<br/>';               //Affiche la variale login (NomUtilisateur dans la base de donnée)
             echo 'Erreur dans requête<br/>';               //Affiche le type d'erreur.
             echo 'Erreur: ' . mysqli_error($dbLink) . '<br/>'; //Affiche la requête envoyée.
             echo 'Requête: ' . $query . '<br/>';
