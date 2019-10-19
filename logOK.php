@@ -19,6 +19,8 @@
                   SET NbConnexion = NbConnexion + 1
                   WHERE NomUtilisateur = \''.$Login.'\'';
 
+        $dbResult=mysqli_query($dbLink, $query);
+
         if (!($dbResult = mysqli_query($dbLink, $query))) {
             echo 'Login '.$Login.'<br/>';               //Affiche la variale login (NomUtilisateur dans la base de donnée)
             echo 'Erreur dans requête<br/>';               //Affiche le type d'erreur.
