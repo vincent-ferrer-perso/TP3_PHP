@@ -27,12 +27,25 @@
         $usernameBD = $dbRow['NomUtilisateur'];
     }
 
-    if ($usernameBD == $Login && $mdpBD == $mdp) {
-        header('Location: logOK.php');
-        $_SESSION['connexion'] = 'ok';
-        $_SESSION['loginSession'] = $Login;
-        $_SESSION['mdpSession'] = $mdp;
+if ($usernameBD == $Login && $mdpBD == $mdp) {
+    $query2 = 'UPDATE user
+                  SET NbConnexion = NbConnexion + 1
+                  WHERE NomUtilisateur = \''.$Login.'\'';
+
+    $dbResult=mysqli_query($dbLink, $query2);
+
+    if (!($dbResult = mysqli_query($dbLink, $query))) {
+        echo 'Erreur dans requête<br/>';               //Affiche le type d'erreur.
+        echo 'Erreur: ' . mysqli_error($dbLink) . '<br/>'; //Affiche la requête envoyée.
+        echo 'Requête: ' . $query . '<br/>';
+        exit();
     }
+
+    header('Location: logOK.php');
+    $_SESSION['connexion'] = 'ok';
+    $_SESSION['loginSession'] = $Login;
+    $_SESSION['mdpSession'] = $mdp;
+}
     else
         header('Location: login.php?step=ERROR');
 
