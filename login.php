@@ -9,5 +9,5 @@
                 <label for="mdp">Mot de passe :</label><br>
                 <input  type="password" id="mdp" name="mdp"><br>           
                     
-                <label for=soumettre><input id="soumettre" type="submit" name="action" value="mailer"></label>
+                <label for=soumettre><input id="soumettre" type="submit" name="action" value="log"></label>
           </form>';
