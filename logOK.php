@@ -17,7 +17,7 @@
 
         $query = 'UPDATE user
                   SET NbConnexion = NbConnexion + 1
-                  WHERE NomUtilisateur = ' . $Login;
+                  WHERE NomUtilisateur = ' .$Login. '';
 
         if (!($dbResult = mysqli_query($dbLink, $query))) {
             echo 'Erreur dans requête<br/>';               //Affiche le type d'erreur.
